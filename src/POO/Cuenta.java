@@ -101,7 +101,7 @@ public class Persona {
     //Main
 
     public class PruebaCuentas {
-        static Persona[] listaPersonas = new Persona[10];
+        static Personas[] listaPersonas = new Personas[10];
         static int contadorPersonas = 0;
         static Scanner input = new Scanner(System.in);
 
@@ -129,25 +129,25 @@ public class Persona {
             if (contadorPersonas < listaPersonas.length) {
                 System.out.print("Dime el DNI: ");
                 String dni = input.nextLine();
-                listaPersonas[contadorPersonas++] = new Persona(dni);
+                listaPersonas[contadorPersonas++] = new Personas(dni);
                 System.out.println("Persona creada correctamente.");
             } else {
                 System.out.println("No hay espacio para más personas.");
             }
         }
 
-        public static Persona buscarPersona() {
+        public static Personas buscarPersona() {
             System.out.print("DNI de la persona: ");
             String dni = input.nextLine();
             for (int i = 0; i < contadorPersonas; i++) {
                 if (listaPersonas[i].getDni().equals(dni)) return listaPersonas[i];
             }
             System.out.println("Persona no encontrada.");
-            return new Persona("invalido"); // retorno seguro sin null
+            return new Personas("invalido"); // retorno seguro sin null
         }
 
         public static void gestionarDinero(boolean esAbono) {
-            Persona persona = buscarPersona();
+            Personas persona = buscarPersona();
             if (!persona.tieneCuentas()) {
                 System.out.println("No tiene cuentas disponibles.");
                 return;

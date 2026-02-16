@@ -76,7 +76,7 @@ public class Reloj {
 
     @Override
     public String toString() {
-        if (!formato24h) {
+        if (formato24h) {
             return this.hour + ":" + this.min + ":" + this.sec + " Formato24h";
         } else if (hour > 12) {
             return this.hour - 12 + ":" + this.min + ":" + this.sec + " PM";

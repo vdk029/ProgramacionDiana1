@@ -4,21 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Gym {
-    // La clave (Key) es el DNI (String) y el valor es el objeto Usuario
+
     private Map<String, Usuario> usuarios;
 
     public Gym() {
         this.usuarios = new HashMap<>();
     }
 
-    // Método auxiliar para saber si el DNI ya está en la base de datos
-    public boolean existe(String dni) {
-        return usuarios.containsKey(dni);
-    }
 
     public void darAlta(String dni, String nombre, int edad) {
         Usuario nuevo = new Usuario(nombre, edad);
-        usuarios.put(dni, nuevo); // Guardamos en el mapa
+        usuarios.put(dni, nuevo);
     }
 
     public void darBaja(String dni) {

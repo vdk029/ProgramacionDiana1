@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Hero {
     // ATRIBUTOS
-    private String name;
+    final private String name;
     private int level;
     private int health;
     private int maxHealth;
@@ -16,6 +16,11 @@ public class Hero {
     private static final int REST_HEAL = 50;
     private static final int EXP_PER_ATTACK = 10;
     private static final int EXP_TO_LEVEL_UP = 50;
+    private static final int LEVEL_UP_HEALTH = 5;
+    private static final int LEVEL_UP_ATTACK = 1;
+    private static final int LEVEL_UP_DEFENSE = 1;
+
+    Random random = new Random();
 
     // CONSTRUCTOR
     public Hero(String name, int health, int attack, int defense) {
@@ -30,17 +35,24 @@ public class Hero {
 
     // GETTERS & SETTERS
     public String getName() {
-        return name;
+
+        return this.name;
+    }
+    // setName no cambia el nombre es final
+
+    public int getLevel() {
+        return this.level;
     }
 
+    //setLevel metodo LevelUp
     public int getHealth() {
-        return health;
-    }
 
+        return this.health;
+    }
 
     public void setHealth(int health) {
-        if (health > this.maxHealth) {
-            this.health = this.maxHealth;
+        if (health > maxHealth) {
+            this.health = maxHealth;
         } else if (health < 0) {
             this.health = 0;
         } else {
@@ -48,13 +60,16 @@ public class Hero {
         }
     }
 
-    public int getAttack() {
-        return attack;
-    }
-
     public int getDefense() {
-        return defense;
+        return this.defense;
     }
+    // setDefense metodo LevelUp
+
+    public int getAttack() {
+        return this.attack;
+    }
+    //setAttack metodo atack
+
 
     // METodos
 
@@ -69,14 +84,29 @@ public class Hero {
     }
 
     public void attack(Hero enemigo) {
-        int danio = Math.max(this.attack - enemigo.getDefense(), 10);
+        int danio = Math.max(this.attack - this.defense, 10);
 
 
         enemigo.setHealth(enemigo.getHealth() - danio);
         System.out.println(this.name + " ataca a " + enemigo.getName() + " y hace " + danio + " de daño.");
 
+        enemigo.setHealth(enemigo.getHealth() - danio);
 
         this.experience += EXP_PER_ATTACK;
 
+    }
+
+    public void levelUp() {
+        this.level++;
+        this.maxHealth += LEVEL_UP_HEALTH;
+        this.attack += LEVEL_UP_ATTACK;
+        this.defense += LEVEL_UP_DEFENSE;
+        this.health = maxHealth;
+        System.out.println(this.name + " ha subido a nivel " + this.level);
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + name + "Nivel: " + level + "Vida: " + health + "/" + maxHealth + "Ataque: " + attack + "Defensa: " + defense + "Experiencia: " + experience;
     }
 }

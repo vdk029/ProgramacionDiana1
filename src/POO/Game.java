@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Random random = new Random();
-
-
         Hero yo = new Hero("Yo", 200, 25, 10);
 
         int hordas = 0;
@@ -40,7 +38,7 @@ public class Game {
 
                 if (enemigoActual.getHealth() <= 0) {
                     System.out.println(enemigoActual.getName() + " ha muerto.");
-
+                    enemigos.remove(0);
                 }
 
 

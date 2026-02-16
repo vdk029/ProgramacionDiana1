@@ -12,8 +12,22 @@ public class Cliente {
     }
 
     public String getDni() {
-        return dni;
+        return this.dni;
     }
+    public int getEdad(){
+        return this.edad;
+    }
+    public String getNombre(){
+        return this.nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
 
     @Override
     public String toString() {

@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class PersonaMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        //Personas persona=new Persona("26600831C","pepe","martinez","100");
 
         //p1
         System.out.println("Introduce datos para la Persona 1");

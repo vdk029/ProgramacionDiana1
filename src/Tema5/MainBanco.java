@@ -9,12 +9,12 @@ public class MainBanco {
         int opcion = -1;
 
         while (opcion != 0) {
-            System.out.println("\n--- BANCO ---");
-            System.out.println("1. Llegada cliente");
-            System.out.println("2. Atender al siguiente");
-            System.out.println("3. Cliente abandona cola");
-            System.out.println("0. Salir");
-            System.out.print("Elige opción: ");
+            System.out.println("BANCO");
+            System.out.println("1 Llegada cliente");
+            System.out.println("2 Atender al siguiente");
+            System.out.println("3 Cliente abandona cola");
+            System.out.println("0 Salir");
+            System.out.print("Elige opcion: ");
 
             opcion = input.nextInt();
             input.nextLine(); // Limpiar buffer
@@ -43,11 +43,11 @@ public class MainBanco {
                     break;
 
                 case 0:
-                    System.out.println("Adiós.");
+                    System.out.println("Adios.");
                     break;
 
                 default:
-                    System.out.println("Opción no válida.");
+                    System.out.println("Error");
             }
         }
     }

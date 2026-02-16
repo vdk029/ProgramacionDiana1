@@ -20,12 +20,12 @@ public class Personas {
 
     // GETTERS & SETTERS
     public String getDni() {
-        return dni;
+        return this.dni;
     }
     // no ponemos el dni porque es finalñ
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -33,7 +33,7 @@ public class Personas {
     }
 
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
 
     public void setSurname(String surname) {
@@ -41,17 +41,21 @@ public class Personas {
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age>=0&&this.age<=117) {
+            this.age = age;
+        }else{
+            System.out.println("edad invalida");
+        }
     }
 
     // MeTODOS
 
     public void print() {
-        System.out.println("Datos: " + name + " " + surname + ", DNI: " + dni + ", Edad: " + age);
+        System.out.println("Datos: " + this.name + " " + this.surname + ", DNI: " + this.dni + ", Edad: " + this.age);
     }
 
     //saber si es adulto

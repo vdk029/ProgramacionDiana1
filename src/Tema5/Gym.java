@@ -18,11 +18,11 @@ public class Gym {
     }
 
     public void darBaja(String dni) {
-        usuarios.remove(dni); // Borramos del mapa por la clave
+        usuarios.remove(dni);
     }
 
     public void mostrarUsuario(String dni) {
-        Usuario u = usuarios.get(dni); // Recuperamos el objeto
+        Usuario u = usuarios.get(dni);
         System.out.println("Datos del usuario: " + u.toString());
     }
 
@@ -31,7 +31,6 @@ public class Gym {
         // Usamos los setters de la clase Usuario para cambiar los datos
         u.setNombre(nuevoNombre);
         u.setEdad(nuevaEdad);
-        // Nota: En un mapa, como tenemos la referencia al objeto, al cambiarlo aquí
-        // se queda cambiado dentro del mapa automáticamente.
+
     }
 }

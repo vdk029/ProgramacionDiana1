@@ -5,11 +5,22 @@ public class Cliente {
     private int edad;
     private String dni;
 
+    private static final String  NOMBRE_BASE="pepe";
+    private static int FINAL_EDAD=18;
+    private static String BASE_DNI="26600831C";
+
     public Cliente(String nombre, int edad, String dni) {
         this.nombre = nombre;
         this.edad = edad;
         this.dni = dni;
     }
+    public Cliente(){
+        this.nombre=NOMBRE_BASE;
+        this.edad=FINAL_EDAD;
+        this.dni=BASE_DNI;
+
+    }
+
 
     public String getDni() {
         return this.dni;

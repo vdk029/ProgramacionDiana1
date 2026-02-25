@@ -18,7 +18,7 @@ public class Ejercicio4Excepciones {
                 try {
                     System.out.print("Que posicionen quieres? ");
                     posicion = input.nextInt();
-                    if (posicion < 0) {
+                    if (posicion >0) {
                         salir = true;
                         System.out.println("SAlir del programa");
                     } else {

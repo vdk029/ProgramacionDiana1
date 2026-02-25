@@ -24,7 +24,7 @@ public class Game {
             ArrayList<Hero> enemigos = new ArrayList<>();
 
             for (int i = 0; i < numeroEnemigos; i++) {
-                Hero malo = new Hero("MAlo" + (i + 1), 50, 15, 5);
+                Hero malo = new Hero("Malo" + (i + 1), 50, 15, 5);
                 enemigos.add(malo);
                 System.out.println("enemigo " + malo.getName() + "!");
             }
@@ -79,4 +79,6 @@ public class Game {
         System.out.println("HAs perdido");
         System.out.println("Has sobrevivido a " + (hordas - 1) + " hordas completas.");
     }
+    //SCANNER FINALLY mirar
+
 }

@@ -18,6 +18,8 @@ public class Ejercicio2Excepciones {
             System.out.println(resultado);
         }catch (ArithmeticException exception){
             System.out.println("error no puedes dividir por 0 ");
+        }catch (InputMismatchException exception){
+            System.out.println("error no puedes dividir por 0 ");
         }
     }
 }

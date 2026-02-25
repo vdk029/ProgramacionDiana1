@@ -4,45 +4,43 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+
 public class ListaCompra {
+    public static void mostrarmenu1() {
+        System.out.println("1 Añadir producto a la lista de la compra");
+        System.out.println("2 Eliminar producto de la lista de la compra");
+        System.out.println("3 Mostrar lista de la compra");
+        System.out.println("4 Añadir producto al carro");
+        System.out.println("5 productos faltantes");
+        System.out.println("6 Salir");
+        System.out.print("Elige opcion: ");
+    }
+
     public static void main(String[] args) {
         Set<String> compra = new HashSet<>();
         Set<String> carrito = new HashSet<>();
         Scanner input = new Scanner(System.in);
         int opcion = 0;
-
-        //lsita de compra
-        compra.add("pilas");
-        compra.add("manzana");
-        compra.add("arroz");
-
-        while (opcion != 6) {
-            System.out.println(" MENU");
-            System.out.println("1 Añadir objeto a la lista de la compra");
-            System.out.println("2 Eliminar objeto de la lista de la compra");
-            System.out.println("3 Mostrar lista de la compra");
-            System.out.println("4 Añadir producto al carro");
-            System.out.println("5 Mostrar productos faltantes");
-            System.out.println("6 Salir");
-            System.out.print("Elige opcion: ");
-
+        do {
+            mostrarmenu1();
             opcion = input.nextInt();
             input.nextLine();
+
 
             switch (opcion) {
                 case 1:
                     System.out.print("DIme el objeto de la compra: ");
-                    String nuevo = input.nextLine().toLowerCase();
+                    String nuevo = input.nextLine();
                     if (!compra.add(nuevo)) {
                         System.out.println("Ya esta en la lista.");
                     } else {
-                        System.out.println("El producto ha sido añadido correctamente.");
+                        System.out.println("Producto añadido");
                     }
                     break;
 
                 case 2:
-                    System.out.print("Introduce el objeto que quieras eliminar: ");
-                    String eliminar = input.nextLine().toLowerCase();
+                    System.out.print("objeto que quieras eliminar: ");
+                    String eliminar = input.nextLine();
                     if (compra.remove(eliminar)) {
                         System.out.println("Producto eliminado correctamente.");
                     } else {
@@ -83,8 +81,10 @@ public class ListaCompra {
                 default:
                     System.out.println("opcion incorrecta");
             }
-        }
+        } while (opcion != 6);
 
-        input.close();
+
     }
+
 }
+

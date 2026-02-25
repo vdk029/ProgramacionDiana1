@@ -15,8 +15,8 @@ public class Ejercicio3Excepciones {
                 vector[i] = input.nextInt();
             } catch (InputMismatchException exception) {
                 System.out.println("Numero invalido ponlo de nuevo");
-                input.nextLine();
-                vector[i] = input.nextInt();
+//                input.nextLine();
+//                vector[i] = input.nextInt();
             }
         }
     }

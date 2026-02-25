@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Hero {
     // ATRIBUTOS
-    final private String name;
+    private String name;
     private int level;
     private int health;
     private int maxHealth;
@@ -29,8 +29,8 @@ public class Hero {
         this.maxHealth = health;
         this.attack = attack;
         this.defense = defense;
-        this.level = 1;
-        this.experience = 0;
+        this.level = level;
+        this.experience = experience;
     }
 
     // GETTERS & SETTERS

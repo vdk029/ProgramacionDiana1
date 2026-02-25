@@ -13,8 +13,9 @@ public class Ejercicio1Excepciones {
             num=input.nextInt();
             System.out.println("Numero"+num);
         }catch (InputMismatchException exception){
-            //si lo ponemos mal vamos auqi
-            System.out.println("VAlor introducido incorrecto");
+            //si lo ponemos mal vamos aqui.
+            System.err.println("VAlor introducido incorrecto");
+            System.err.println(exception.getMessage());
         }
     }
 

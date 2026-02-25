@@ -1,13 +1,22 @@
 package Tema5;
 
 
+import java.util.List;
+
 public class Usuario {
     private String nombre;
     private int edad;
 
+    private final String NOMBRE_BASE="pepe";
+    private final int EDAD_BASE=20;
+
     public Usuario(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
+    }
+    public Usuario(){
+        this.nombre=NOMBRE_BASE;
+        this.edad=EDAD_BASE;
     }
 
     // Getters y Setters

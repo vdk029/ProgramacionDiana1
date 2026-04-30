@@ -21,9 +21,13 @@ public class Serializacion6 {
             objetoStream.writeObject(lista);
             System.out.println("Lista de personas guardada.");
 
+
+
         } catch (IOException e) {
             System.out.println("Error al guardar la lista" + e.getMessage());
         }
+
+
     }
 }
 

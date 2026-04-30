@@ -17,7 +17,7 @@ public class Serializacion1 {
             System.out.println("dime tu nombre");
             String nombre = input.nextLine();
 
-            String contenido = "Nombre: " + nombre + "\nEdad: " + edad;
+            String contenido = "Nombre: " + nombre + "Edad: " + edad;
             Files.writeString(path, contenido);
         } catch (IOException e) {
             System.out.println("Error al escribir en el archivo" + e.getMessage());

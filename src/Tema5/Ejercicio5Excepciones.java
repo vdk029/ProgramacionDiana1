@@ -45,6 +45,7 @@ public class Ejercicio5Excepciones {
             } catch (Exception exception) {
                 System.err.println(exception.getMessage());
             }
+            //buscar libro por ibsn que no se pueda modificar pero si buscar  libro ibsn encontrar settear genero encontrar libro por autor necesito saber,
         }
     }
 }

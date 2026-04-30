@@ -7,7 +7,7 @@ import java.util.*;
 public class EjercicioB7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // 1. Ruta base según la jerarquía de tu escritorio [cite: 8]
+        //Ruta base
         String rutaLibros = "C:/Users/VOSKI/Desktop/Documentos/";
 
         System.out.print("Introduce el nombre del libro ");
@@ -15,7 +15,7 @@ public class EjercicioB7 {
         Path pathLibro = Paths.get(rutaLibros + nombreLibro);
 
         try {
-            // 2. LECTURA: Obtenemos todas las líneas
+            // lineas
             List<String> lineas = Files.readAllLines(pathLibro);
 
             long numLineas = lineas.size();
@@ -26,8 +26,8 @@ public class EjercicioB7 {
             for (String linea : lineas) {
                 numCaracteres += linea.length();
 
-                // Separamos la línea en palabras (limpiando espacios)
-                String[] palabras = linea.toLowerCase().split("\\W+");
+                //
+                String[] palabras = linea.toLowerCase().split("");
 
                 for (String pal : palabras) {
                     if (!pal.isEmpty()) {

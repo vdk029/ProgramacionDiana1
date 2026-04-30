@@ -20,25 +20,21 @@ public class EjercicioB5 {
                 System.out.println("Carpeta creada.");
             }
 
-            List<String> allWords = Files.readAllLines(origenRuta);
 
             // reocrrer abecedario
             for (char letra = 'A'; letra <= 'Z'; letra++) {
                 List<String> palabrasFiltradas = new ArrayList<>();
-                String letraString = String.valueOf(letra);
 
-                // filtrar por palabras
-                for (String palabra : allWords) {
-                    if (palabra.toUpperCase().startsWith(letraString)) {
-                        palabrasFiltradas.add(palabra);
-                    }
-                }
 
                 // crear el archivo para que por letra escriba el diccionario
                 Path archivoLetra = carpetaDiccionario.resolve(letra + ".txt");
 
                 Files.write(archivoLetra, palabrasFiltradas);
             }
+
+            //bufered reader filtradno por chart a
+            //lees el diccionario.txt, vas cogiendo el primer caracter de todas las palabras, y escribes cada palabra en el archivo que corresponda
+
 
             System.out.println("archivos creados en la carpeta Diccionario.");
 
